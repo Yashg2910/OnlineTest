@@ -18,7 +18,7 @@ def course_list_view(request):
             course_form.save()
             return render(request, "courses.html",{"courses": courses})
         else:
-            print(f"errors : {course_form.errors}")
+
             return render(request, "courses.html", {
                     "errors": course_form.errors,
                      "courses": courses
@@ -34,7 +34,6 @@ def course_edit_view(request):
             course_edit_form.save()
             return redirect('course_list')
         else:
-            print(f"errors : {course_edit_form.errors}")
             return render(request, "courses.html", {
                 "errors": course_edit_form.errors,
             })
